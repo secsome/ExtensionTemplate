@@ -63,6 +63,7 @@
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <WholeProgramOptimization>false</WholeProgramOptimization>
       <Optimization>Disabled</Optimization>
+      <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -91,14 +92,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Phobos\Phobos\YRpp\StaticInits.cpp" />
     <ClCompile Include="DllMain.cpp" />
     <ClCompile Include="Ext\Extension.cpp" />
     <ClCompile Include="Ext\TechnoType\Body.cpp" />
+    <ClCompile Include="Ext\Techno\Body.cpp" />
     <ClCompile Include="New\PusheenManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ext\Extension.h" />
     <ClInclude Include="Ext\TechnoType\Body.h" />
+    <ClInclude Include="Ext\Techno\Body.h" />
+    <ClInclude Include="New\AbstractBase.h" />
     <ClInclude Include="New\PusheenManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

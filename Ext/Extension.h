@@ -71,7 +71,14 @@ public:
     HRESULT Load(IStream* pStm) const
     {
         if (auto pExtData = this->ExtensionObject)
-            return pExtData->Load(pStm);
+        {
+            HRESULT hr = pStm->Read(pExtData, pExtData->GetSize(), nullptr);
+
+            if (SUCCEEDED(hr))
+                return pExtData->Load(pStm);
+
+            return hr;
+        }
 
         return S_OK;
     }
@@ -79,7 +86,14 @@ public:
     HRESULT Save(IStream* pStm) const
     {
         if (auto pExtData = this->ExtensionObject)
-            return pExtData->Save(pStm);
+        {
+            HRESULT hr = pStm->Write(pExtData, pExtData->GetSize(), nullptr);
+            
+            if (SUCCEEDED(hr))
+                return pExtData->Save(pStm);
+            
+            return hr;
+        }
 
         return S_OK;
     }

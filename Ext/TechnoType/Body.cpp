@@ -19,29 +19,38 @@ void TechnoTypeExt::LoadFromINI(TechnoTypeClass* pThis, CCINIClass* const pINI)
 		return;
 
 	pExt->HideHealthBar = pINI->ReadBool(lpSection, "HideHealthBar", pExt->HideHealthBar);
+	pExt->HasPusheen = pINI->ReadBool(lpSection, "HasPusheen", pExt->HasPusheen);
+}
+
+TechnoTypeExt::TechnoTypeExt()
+{
+	HideHealthBar = false;
+	HasPusheen = false;
+}
+
+TechnoTypeExt::~TechnoTypeExt()
+{
 }
 
 size_t TechnoTypeExt::GetSize() const
 {
-	return
-		sizeof(HideHealthBar)
-		;
+	return sizeof(TechnoTypeExt);
 }
 
 HRESULT TechnoTypeExt::Load(IStream* pStm)
 {
-	HRESULT hr;
+	HRESULT hr = S_OK;
 	
-	hr = this->Read(pStm, this->HideHealthBar); FAIL_CHECK(hr);
-
+	// Nothing to swizzle
+	
     return hr;
 }
 
 HRESULT TechnoTypeExt::Save(IStream* pStm)
 {
-	HRESULT hr;
-	
-	hr = this->Write(pStm, this->HideHealthBar); FAIL_CHECK(hr);
+	HRESULT hr = S_OK;
+
+	// No extra thing to write
 
     return hr;
 }

@@ -7,11 +7,9 @@
 class TechnoTypeExt final : public IExtension
 {
 public:
-    TechnoTypeExt() :
-        HideHealthBar{ false }
-    {}
+    TechnoTypeExt();
 
-    ~TechnoTypeExt() = default;
+    ~TechnoTypeExt();
 
     // IExtension
     virtual size_t GetSize() const override final;
@@ -29,6 +27,7 @@ public:
     // Properties
 public:
     bool HideHealthBar;
+    bool HasPusheen;
 
 };
 
