@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "36022586-90d8-46c5-9d1d-fcc4af8e1bb1": {
+      "ProjectGuid": "36022586-90d8-46c5-9d1d-fcc4af8e1bb1",
+      "DisplayName": "ExtensionTemplate",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "杂项文件",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}
