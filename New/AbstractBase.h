@@ -30,20 +30,20 @@ public:
 
 	virtual void __stdcall INoticeSource_Unknown() override JMP_STD(0x410590);
 
-	virtual void Init() JMP_THIS(0x410470);
-	virtual void PointerExpired(AbstractClass* pAbstract, bool removed) JMP_THIS(0x410480);
+	virtual void Init() override JMP_THIS(0x410470);
+	virtual void PointerExpired(AbstractClass* pAbstract, bool removed) override JMP_THIS(0x410480);
 	virtual AbstractType WhatAmI() const = 0;
 	virtual int Size() const = 0;
-	virtual void CalculateChecksum(Checksummer& checksum) const JMP_THIS(0x410410);
-	virtual int GetOwningHouseIndex() const JMP_THIS(0x410490);
-	virtual HouseClass* GetOwningHouse() const JMP_THIS(0x4104A0);
-	virtual int GetArrayIndex() const JMP_THIS(0x4104B0);
-	virtual bool IsDead() const JMP_THIS(0x410440);
-	virtual CoordStruct GetCoords() const JMP_THIS(0x4104C0);
-	virtual CoordStruct GetDestination(TechnoClass* pDocker = nullptr) JMP_THIS(0x4104F0); // where this is moving, or a building's dock for a techno. iow, a rendez-vous point
-	virtual bool IsOnFloor() const JMP_THIS(0x410520);
-	virtual bool IsInAir() const JMP_THIS(0x410530);
-	virtual CoordStruct GetAltCoords() const JMP_THIS(0x410540);
-	virtual void Update() JMP_THIS(0x410570);
+	virtual void CalculateChecksum(Checksummer& checksum) const override JMP_THIS(0x410410);
+	virtual int GetOwningHouseIndex() const override JMP_THIS(0x410490);
+	virtual HouseClass* GetOwningHouse() const override JMP_THIS(0x4104A0);
+	virtual int GetArrayIndex() const override JMP_THIS(0x4104B0);
+	virtual bool IsDead() const override JMP_THIS(0x410440);
+	virtual CoordStruct* GetCoords(CoordStruct* pCrd) const override JMP_THIS(0x4104C0);
+	virtual CoordStruct* GetDestination(CoordStruct* pCrd, TechnoClass* pDocker = nullptr) const override JMP_THIS(0x4104F0); // where this is moving, or a building's dock for a techno. iow, a rendez-vous point
+	virtual bool IsOnFloor() const override JMP_THIS(0x410520);
+	virtual bool IsInAir() const override JMP_THIS(0x410530);
+	virtual CoordStruct* GetAltCoords(CoordStruct* pCrd) const override JMP_THIS(0x410540);
+	virtual void Update() override JMP_THIS(0x410570);
 
 };
