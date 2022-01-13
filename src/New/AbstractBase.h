@@ -5,8 +5,7 @@
 class AbstractBase : public AbstractClass
 {
 public:
-	AbstractBase() JMP_THIS(0x410170);
-	AbstractBase(noinit_t) JMP_THIS(0x4101C0);
+	AbstractBase() : AbstractClass() {};
 
 	virtual HRESULT __stdcall QueryInterface(REFIID iid, void** ppvObject) override JMP_STD(0x410260);
 	virtual ULONG __stdcall AddRef() override JMP_STD(0x410300);

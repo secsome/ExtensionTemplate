@@ -6,22 +6,11 @@
 class IExtension
 {
 public:
+    virtual ~IExtension() {};
+
     virtual size_t GetSize() const = 0;
     virtual HRESULT Load(IStream* pStm) = 0;
     virtual HRESULT Save(IStream* pStm) = 0;
-
-protected:
-    template<typename T>
-    HRESULT Read(IStream* pStm, T& value)
-    {
-        return pStm->Read(&value, sizeof(value), nullptr);
-    }
-
-    template<typename T>
-    HRESULT Write(IStream* pStm, const T& value)
-    {
-        return pStm->Write(&value, sizeof(value), nullptr);
-    }
 
 #define FAIL_CHECK(hr) if(FAILED(hr)) return hr;
 };

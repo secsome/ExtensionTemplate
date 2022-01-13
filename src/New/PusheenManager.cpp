@@ -39,14 +39,13 @@ HRESULT PusheenManagerClass::LoadVector(IStream* pStm)
     return hr;
 }
 
-PusheenManagerClass::PusheenManagerClass() : AbstractBase::AbstractBase()
+PusheenManagerClass::PusheenManagerClass() : AbstractBase()
 {
     PusheenManagers.AddItem(this);
 
     PusheenValue = 0;
 }
 
-// 751E0E50-1B74-DA94-C375-942B43B0A21C
 HRESULT __stdcall PusheenManagerClass::GetClassID(CLSID* pClassID)
 {
     if (!pClassID)

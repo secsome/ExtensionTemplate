@@ -69,7 +69,7 @@ DEFINE_HOOK(0x711AE0, TechnoTypeClass_DTOR, 0x5)
 	GET(TechnoTypeClass*, pItem, ECX);
 
     ExtensionWrapper::GetWrapper(pItem)->DestoryExtensionObject();
-
+	
 	return 0;
 }
 

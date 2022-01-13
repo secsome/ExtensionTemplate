@@ -15,39 +15,45 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DllMain.cpp">
+    <ClCompile Include="src\DllMain.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Ext\Extension.cpp">
+    <ClCompile Include="src\Ext\Extension.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Ext\TechnoType\Body.cpp">
+    <ClCompile Include="src\Ext\TechnoType\Body.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="New\PusheenManager.cpp">
+    <ClCompile Include="src\New\PusheenManager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="..\Phobos\Phobos\YRpp\StaticInits.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Ext\Techno\Body.cpp">
+    <ClCompile Include="src\Ext\Techno\Body.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utilities\SaveLoadHelpers.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Ext\Extension.h">
+    <ClInclude Include="src\Ext\Extension.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Ext\TechnoType\Body.h">
+    <ClInclude Include="src\Ext\TechnoType\Body.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="New\PusheenManager.h">
+    <ClInclude Include="src\New\PusheenManager.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Ext\Techno\Body.h">
+    <ClInclude Include="src\Ext\Techno\Body.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="New\AbstractBase.h">
+    <ClInclude Include="src\New\AbstractBase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utilities\SaveLoadHelpers.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

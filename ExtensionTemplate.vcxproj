@@ -64,6 +64,8 @@
       <WholeProgramOptimization>false</WholeProgramOptimization>
       <Optimization>Disabled</Optimization>
       <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
+      <CallingConvention>FastCall</CallingConvention>
+      <DisableSpecificWarnings>4731;</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -93,18 +95,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Phobos\Phobos\YRpp\StaticInits.cpp" />
-    <ClCompile Include="DllMain.cpp" />
-    <ClCompile Include="Ext\Extension.cpp" />
-    <ClCompile Include="Ext\TechnoType\Body.cpp" />
-    <ClCompile Include="Ext\Techno\Body.cpp" />
-    <ClCompile Include="New\PusheenManager.cpp" />
+    <ClCompile Include="src\DllMain.cpp" />
+    <ClCompile Include="src\Ext\Extension.cpp" />
+    <ClCompile Include="src\Ext\TechnoType\Body.cpp" />
+    <ClCompile Include="src\Ext\Techno\Body.cpp" />
+    <ClCompile Include="src\New\PusheenManager.cpp" />
+    <ClCompile Include="src\Utilities\SaveLoadHelpers.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Ext\Extension.h" />
-    <ClInclude Include="Ext\TechnoType\Body.h" />
-    <ClInclude Include="Ext\Techno\Body.h" />
-    <ClInclude Include="New\AbstractBase.h" />
-    <ClInclude Include="New\PusheenManager.h" />
+    <ClInclude Include="src\Ext\Extension.h" />
+    <ClInclude Include="src\Ext\TechnoType\Body.h" />
+    <ClInclude Include="src\Ext\Techno\Body.h" />
+    <ClInclude Include="src\New\AbstractBase.h" />
+    <ClInclude Include="src\New\PusheenManager.h" />
+    <ClInclude Include="src\Utilities\SaveLoadHelpers.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

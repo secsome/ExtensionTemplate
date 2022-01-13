@@ -2,16 +2,14 @@
 
 #include "../Extension.h"
 
-#include <TechnoClass.h>
+#include <TechnoTypeClass.h>
 
-#include "../../New/PusheenManager.h"
-
-class TechnoExt final : public IExtension
+class TechnoTypeExt final : public IExtension
 {
 public:
-    TechnoExt();
+    TechnoTypeExt();
 
-    ~TechnoExt();
+    virtual ~TechnoTypeExt() override final;
 
     // IExtension
     virtual size_t GetSize() const override final;
@@ -19,14 +17,16 @@ public:
     virtual HRESULT Save(IStream* pStm) override final;
 
     // Ext helpers
-    static TechnoExt* GetExtData(TechnoClass* pThis);
-    static void Init(TechnoClass* pThis);
-
+    static TechnoTypeExt* GetExtData(TechnoTypeClass* pType);
+    static void LoadFromINI(TechnoTypeClass* pThis, CCINIClass* const pINI);
+    
     // Other functions
 
     // Normal functions
 
     // Properties
 public:
-    PusheenManagerClass* Pusheen;
+    bool HideHealthBar;
+    bool HasPusheen;
+
 };

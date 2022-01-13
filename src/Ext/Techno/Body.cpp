@@ -1,7 +1,7 @@
 #include "Body.h"
 
 #include <Helpers/Macro.h>
-
+#include <CellClass.h>
 #include "../TechnoType/Body.h"
 
 TechnoExt* TechnoExt::GetExtData(TechnoClass* pThis)
@@ -29,7 +29,10 @@ TechnoExt::TechnoExt()
 TechnoExt::~TechnoExt()
 {
 	if (Pusheen)
+	{
 		GameDelete(Pusheen);
+		Pusheen = nullptr;
+	}
 }
 
 size_t TechnoExt::GetSize() const
