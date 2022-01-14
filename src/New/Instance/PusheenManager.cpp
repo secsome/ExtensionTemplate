@@ -58,12 +58,22 @@ HRESULT __stdcall PusheenManagerClass::GetClassID(CLSID* pClassID)
 
 HRESULT __stdcall PusheenManagerClass::Load(IStream* pStm)
 {
-    return this->AbstractBase::Load(pStm);
+    HRESULT hr = AbstractBase::Load(pStm);
+    if (SUCCEEDED(hr))
+    {
+
+    }
+    return hr;
 }
 
 HRESULT __stdcall PusheenManagerClass::Save(IStream* pStm, BOOL fClearDirty)
 {
-    return this->AbstractBase::Save(pStm, fClearDirty);
+    HRESULT hr = AbstractBase::Save(pStm, fClearDirty);
+    if (SUCCEEDED(hr))
+    {
+
+    }
+    return hr;
 }
 
 PusheenManagerClass::~PusheenManagerClass()
@@ -73,7 +83,7 @@ PusheenManagerClass::~PusheenManagerClass()
 
 AbstractType PusheenManagerClass::WhatAmI() const
 {
-    return AbstractType(74);
+    return AbstractType(NewAbstractType::PusheenManager);
 }
 
 int PusheenManagerClass::Size() const
@@ -83,8 +93,9 @@ int PusheenManagerClass::Size() const
 
 void PusheenManagerClass::CalculateChecksum(Checksummer& checksum) const
 {
-    checksum.Add(PusheenValue);
     AbstractBase::CalculateChecksum(checksum);
+
+    checksum.Add(PusheenValue);
 }
 
 void PusheenManagerClass::Update()
@@ -100,49 +111,4 @@ void PusheenManagerClass::Update()
         swprintf_s(buffer, L"%04d", PusheenValue);
         MessageListClass::Instance->PrintMessage(buffer);
     }
-}
-
-DEFINE_HOOK(0x55B4E1, LogicClass_AI, 0x5)
-{
-    for (auto& pusheen : PusheenManagerClass::PusheenManagers)
-        pusheen->Update();
-
-    return 0;
-}
-
-DEFINE_HOOK(0x67D32C, Put_All_PusheenManagers, 0x5)
-{
-    GET(IStream*, pStm, ESI);
-
-    HRESULT hr = PusheenManagerClass::SaveVector(pStm);
-    
-    return SUCCEEDED(hr) ? 0 : 0x67D42A;
-}
-
-DEFINE_HOOK(0x67E826, Decode_All_PusheenManagers, 0x6)
-{
-    GET(IStream*, pStm, ESI);
-
-    HRESULT hr = PusheenManagerClass::LoadVector(pStm);
-
-    return SUCCEEDED(hr) ? 0 : 0x67F7A3;
-}
-
-DEFINE_HOOK(0x6BD6B1, WinMain_CoRegisterClass_PusheenManager, 0x5)
-{
-    auto pFactory = GameCreate<TClassFactory<PusheenManagerClass>>();
-    DWORD dwRegister;
-    Imports::CoRegisterClassObject(
-        __uuidof(PusheenManagerClass), pFactory, CLSCTX_INPROC_SERVER, REGCLS_MULTIPLEUSE, &dwRegister
-    );
-    Game::COMClasses->AddItem(dwRegister);
-
-    return 0;
-}
-
-DEFINE_HOOK(0x685659, Clear_Scenario_PusheenManager, 0xA)
-{
-    PusheenManagerClass::PusheenManagers.Clear();
-
-    return 0;
 }

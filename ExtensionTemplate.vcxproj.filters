@@ -24,7 +24,7 @@
     <ClCompile Include="src\Ext\TechnoType\Body.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\New\PusheenManager.cpp">
+    <ClCompile Include="src\New\Instance\PusheenManager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="..\Phobos\Phobos\YRpp\StaticInits.cpp">
@@ -36,6 +36,21 @@
     <ClCompile Include="src\Utilities\SaveLoadHelpers.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\Ext\Bullet\Body.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\New\Type\TrajectoryType.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\New\Hooks.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Ext\BulletType\Body.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\New\Instance\Trajectory.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Ext\Extension.h">
@@ -44,16 +59,31 @@
     <ClInclude Include="src\Ext\TechnoType\Body.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\New\PusheenManager.h">
+    <ClInclude Include="src\New\Instance\PusheenManager.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\Ext\Techno\Body.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\New\AbstractBase.h">
+    <ClInclude Include="src\New\Instance\AbstractBase.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\Utilities\SaveLoadHelpers.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ext\Bullet\Body.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\New\Type\TrajectoryType.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\New\Type\AbstractTypeBase.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ext\BulletType\Body.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\New\Instance\Trajectory.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

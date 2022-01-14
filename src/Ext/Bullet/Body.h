@@ -2,16 +2,16 @@
 
 #include "../Extension.h"
 
-#include <TechnoClass.h>
+#include <BulletClass.h>
 
 #include "../../New/Instance/PusheenManager.h"
 
-class TechnoExt final : public IExtension
+class BulletExt final : public IExtension
 {
 public:
-    TechnoExt();
+    BulletExt();
 
-    virtual ~TechnoExt() override final;
+    virtual ~BulletExt() override final;
 
     // IExtension
     virtual size_t GetSize() const override final;
@@ -19,8 +19,8 @@ public:
     virtual HRESULT Save(IStream* pStm) override final;
 
     // Ext helpers
-    static TechnoExt* GetExtData(TechnoClass* pThis);
-    static void Init(TechnoClass* pThis);
+    static BulletExt* GetExtData(BulletClass* pThis);
+    static void Init(BulletClass* pThis);
 
     // Other functions
 
@@ -28,5 +28,5 @@ public:
 
     // Properties
 public:
-    PusheenManagerClass* Pusheen;
+    
 };

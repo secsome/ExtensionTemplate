@@ -96,18 +96,28 @@
   <ItemGroup>
     <ClCompile Include="..\Phobos\Phobos\YRpp\StaticInits.cpp" />
     <ClCompile Include="src\DllMain.cpp" />
+    <ClCompile Include="src\Ext\BulletType\Body.cpp" />
+    <ClCompile Include="src\Ext\Bullet\Body.cpp" />
     <ClCompile Include="src\Ext\Extension.cpp" />
     <ClCompile Include="src\Ext\TechnoType\Body.cpp" />
     <ClCompile Include="src\Ext\Techno\Body.cpp" />
-    <ClCompile Include="src\New\PusheenManager.cpp" />
+    <ClCompile Include="src\New\Hooks.cpp" />
+    <ClCompile Include="src\New\Instance\PusheenManager.cpp" />
+    <ClCompile Include="src\New\Instance\Trajectory.cpp" />
+    <ClCompile Include="src\New\Type\TrajectoryType.cpp" />
     <ClCompile Include="src\Utilities\SaveLoadHelpers.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Ext\BulletType\Body.h" />
+    <ClInclude Include="src\Ext\Bullet\Body.h" />
     <ClInclude Include="src\Ext\Extension.h" />
     <ClInclude Include="src\Ext\TechnoType\Body.h" />
     <ClInclude Include="src\Ext\Techno\Body.h" />
-    <ClInclude Include="src\New\AbstractBase.h" />
-    <ClInclude Include="src\New\PusheenManager.h" />
+    <ClInclude Include="src\New\Instance\AbstractBase.h" />
+    <ClInclude Include="src\New\Instance\Trajectory.h" />
+    <ClInclude Include="src\New\Type\AbstractTypeBase.h" />
+    <ClInclude Include="src\New\Instance\PusheenManager.h" />
+    <ClInclude Include="src\New\Type\TrajectoryType.h" />
     <ClInclude Include="src\Utilities\SaveLoadHelpers.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

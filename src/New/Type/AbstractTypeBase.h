@@ -1,11 +1,13 @@
 #pragma once
 
-#include <AbstractClass.h>
+#include "../Instance/AbstractBase.h"
 
-class AbstractBase : public AbstractClass
+class CCINIClass;
+
+class AbstractTypeBase : public AbstractBase
 {
 public:
-	AbstractBase() : AbstractClass() {};
+	AbstractTypeBase() : AbstractBase() {};
 
 	virtual HRESULT __stdcall QueryInterface(REFIID iid, void** ppvObject) override JMP_STD(0x410260);
 	virtual ULONG __stdcall AddRef() override JMP_STD(0x410300);
@@ -19,7 +21,7 @@ public:
 
 	virtual HRESULT __stdcall GetSizeMax(ULARGE_INTEGER* pcbSize) override JMP_STD(0x4103E0);
 
-	virtual ~AbstractBase() override JMP_THIS(0x4105A0);
+	virtual ~AbstractTypeBase() override JMP_THIS(0x410C30);
 
 	virtual AbstractType __stdcall What_Am_I() const override JMP_STD(0x410210);
 	virtual int __stdcall Fetch_ID() const override JMP_STD(0x410220);
@@ -33,7 +35,7 @@ public:
 	virtual void PointerExpired(AbstractClass* pAbstract, bool removed) override JMP_THIS(0x410480);
 	virtual AbstractType WhatAmI() const = 0;
 	virtual int Size() const = 0;
-	virtual void CalculateChecksum(Checksummer& checksum) const override JMP_THIS(0x410410);
+	virtual void CalculateChecksum(Checksummer& checksum) const override JMP_THIS(0x410BE0);
 	virtual int GetOwningHouseIndex() const override JMP_THIS(0x410490);
 	virtual HouseClass* GetOwningHouse() const override JMP_THIS(0x4104A0);
 	virtual int GetArrayIndex() const override JMP_THIS(0x4104B0);
@@ -44,5 +46,13 @@ public:
 	virtual bool IsInAir() const override JMP_THIS(0x410530);
 	virtual CoordStruct* GetAltCoords(CoordStruct* pCrd) const override JMP_THIS(0x410540);
 	virtual void Update() override JMP_THIS(0x410570);
+	virtual void LoadTheaterSpecificArt(TheaterType th_type) const JMP_THIS(0x410C20);
+	virtual bool LoadFromINI(CCINIClass* pINI) JMP_THIS(0x410A60);
+	virtual bool SaveToINI(CCINIClass* pINI) JMP_THIS(0x410B90);
 
+public:
+	char ID[0x19]{};
+	char UINameLabel[0x20]{};
+	const wchar_t* UIName{nullptr};
+	char Name[0x31]{};
 };

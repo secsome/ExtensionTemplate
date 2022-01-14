@@ -30,3 +30,8 @@ public:
     bool HasPusheen;
 
 };
+
+class TechnoTypeHelper : public HelperClass<TechnoTypeClass>
+{
+    
+};
